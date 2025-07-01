@@ -2,6 +2,7 @@ import argparse
 import os
 import requests
 import datetime
+import json
 
 from github import Github, Auth
 from notion_client import Client
@@ -16,6 +17,7 @@ notion_token = os.environ['NOTION_KEY']
 notion = Client(auth=notion_token)
 database_id = os.environ['NOTION_DATABASE_ID']
 
+SYNCED_FILE = "github-issues-integration-notion_src/notion_synced.json"
 
 def sync_github_to_notion():
     """
@@ -210,63 +212,79 @@ def fetch_page_blocks(page_id):
 
     return markdown_content
 
+def load_synced_data():
+    if not os.path.exists(SYNCED_FILE):
+        return {}
+    with open(SYNCED_FILE, "r") as f:
+        return json.load(f)
+
+def save_synced_data(data):
+    with open(SYNCED_FILE, "w") as f:
+        json.dump(data, f)
+
 def sync_notion_to_github():
     """
-    Notion → GitHub Markdown 파일 변환 & 업로드
+    Notion → GitHub Markdown 파일 변환 & Chirpy 블로그 _posts에 업로드
+    수정 여부를 확인하여 중복 업로드 방지
     """
-    print("🔄 Syncing Notion Pages to GitHub with Markdown formatting...")
+    print("🔄 Syncing Notion Pages to GitHub as Chirpy posts...")
 
     query = notion.databases.query(database_id=database_id)
-    now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
-    print(now)
+    synced_data = load_synced_data()
+    updated_data = {}
 
     for page in query["results"]:
-        markdown_content = ""
+        page_id = page["id"]
+        last_edited_time_str = page.get("last_edited_time")
 
-        last_edited_time = page["properties"].get("last_edited_time", {}).get("last_edited_time")
-        if not last_edited_time:
-            print("last_edited_timen Error")
+        if not last_edited_time_str:
+            print(f"❗️ Skip page with missing last_edited_time: {page_id}")
             continue
 
-        last_edited_time = datetime.datetime.strptime(last_edited_time, "%Y-%m-%dT%H:%M:%S.%fZ")
+        if synced_data.get(page_id) == last_edited_time_str:
+            continue  # 이미 동기화된 페이지와 수정시간이 동일하면 skip
 
-        time_diff = (now - last_edited_time).total_seconds()
-
-        if time_diff > 300:  # 300초 = 5분
-            continue  # 5분 이상 지난 페이지는 건너뛰기
-
-        # ✅ "title" 속성을 가진 필드 찾기
+        # ✅ 제목 추출
         title_key = next((key for key in page["properties"] if page["properties"][key]["type"] == "title"), None)
         title = convert_rich_text_to_markdown(page["properties"][title_key]["title"]) if title_key else "Untitled"
+        title = title.strip()
 
-        # ✅ 본문 블록을 가져와 변환
-        page_id = page["id"]
+        # ✅ 페이지 내용 추출
         content = fetch_page_blocks(page_id)
-
         if not content:
             content = "No content"
 
-        markdown_content += f"# {title}\n\n{content}\n\n"
+        # ✅ 날짜 처리
+        created_date = datetime.datetime.strptime(page["created_time"], "%Y-%m-%dT%H:%M:%S.%fZ")
+        created_date_str = created_date.strftime("%Y-%m-%d")
+        created_datetime_str = created_date.strftime("%Y-%m-%d %H:%M:%S")
 
-        markdown_content += "---\n\n"
+        slug = title.lower().replace(" ", "-").replace("/", "-")
 
-        # ✅ 파일 이름을 안전하게 변환
-        safe_title = title.replace(" ", "_").replace("/", "-")  # 파일명에 안전한 문자 사용
+        # ✅ Chirpy용 Front Matter
+        front_matter = f"""---\ntitle: "{title}"\ndate: {created_datetime_str} +0900\ncategories: [Notion, Sync]\ntags: [notion, automation]\ndescription: "Notion 동기화된 게시글입니다."\ntoc: true\ncomments: true\n---\n"""
 
-        # ✅ 날짜 가져오기 (페이지 생성 날짜)
-        created_date = datetime.datetime.strptime(page["created_time"], "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%Y%m%d")
+        markdown_content = front_matter + "\n" + content + "\n"
 
-        # ✅ Markdown 파일 경로 설정
-        md_filename = f"notion_sync/{created_date}_{safe_title}.md"
+        # ✅ 업로드 경로
+        md_filename = f"_posts/{created_date_str}-{slug}.md"
 
-        # ✅ GitHub에 파일 업로드 (폴더 구조 유지)
         try:
             contents = repo.get_contents(md_filename)
-            repo.update_file(contents.path, "Update Notion Sync", markdown_content, contents.sha)
+            repo.update_file(contents.path, f"Update post from Notion: {title}", markdown_content, contents.sha)
+            print(f"🔁 Updated: {title}")
         except:
-            repo.create_file(md_filename, "Create Notion Sync", markdown_content)
+            repo.create_file(md_filename, f"Create post from Notion: {title}", markdown_content)
+            print(f"🆕 Created: {title}")
 
-    print("✅ Notion Pages successfully synced to GitHub in /notion_sync/ folder!")
+        # ✅ 최신 수정시간 저장
+        updated_data[page_id] = last_edited_time_str
+
+    # ✅ 동기화 완료된 페이지 정보 저장
+    synced_data.update(updated_data)
+    save_synced_data(synced_data)
+
+    print("✅ Notion Pages successfully synced to GitHub as blog posts!")
 
 
 if __name__ == "__main__":
