@@ -261,8 +261,17 @@ def sync_notion_to_github():
 
         slug = title.lower().replace(" ", "-").replace("/", "-")
 
+        # ✅ 태그 추출
+        tags_key = next((key for key in page["properties"] if page["properties"][key]["type"] == "multi_select"), None)
+        notion_tags = []
+
+        if tags_key:
+            notion_tags = [tag["name"] for tag in page["properties"][tags_key]["multi_select"]]
+
+        tags_yaml = "[" + ", ".join(notion_tags) + "]" if notion_tags else "[notion, automation]"
+
         # ✅ Chirpy용 Front Matter
-        front_matter = f"""---\ntitle: "{title}"\ndate: {created_datetime_str} +0900\ncategories: [Notion, Sync]\ntags: [notion, automation]\ndescription: "Notion 동기화된 게시글입니다."\ntoc: true\ncomments: true\n---\n"""
+        front_matter = f"""---\ntitle: "{title}"\ndate: {created_datetime_str} +0900\ncategories: [Notion, Sync]\ntags: {tags_yaml}\ndescription: "Notion 동기화된 게시글입니다."\ntoc: true\ncomments: true\n---\n"""
 
         markdown_content = front_matter + "\n" + content + "\n"
 
