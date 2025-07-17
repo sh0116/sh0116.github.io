@@ -249,6 +249,14 @@ def sync_notion_to_github():
         title = convert_rich_text_to_markdown(page["properties"][title_key]["title"]) if title_key else "Untitled"
         title = title.strip()
 
+        # ✅ Category 추출
+        category_key = "Category"
+        notion_categories = []
+        if category_key in page["properties"] and page["properties"][category_key]["type"] == "multi_select":
+            notion_categories = [category["name"] for category in page["properties"][category_key]["multi_select"]]
+
+        categories_yaml = "[" + ", ".join(notion_categories) + "]" if notion_categories else "[Notion, Sync]"
+
         # ✅ 페이지 내용 추출
         content = fetch_page_blocks(page_id)
         if not content:
@@ -262,19 +270,30 @@ def sync_notion_to_github():
         slug = title.lower().replace(" ", "-").replace("/", "-")
 
         # ✅ 태그 추출
-        tags_key = next((key for key in page["properties"] if page["properties"][key]["type"] == "multi_select"), None)
+        tags_key = next((key for key in page["properties"] if page["properties"][key]["type"] == "multi_select" and key != category_key), None)
         notion_tags = []
 
         if tags_key:
             notion_tags = [tag["name"] for tag in page["properties"][tags_key]["multi_select"]]
 
+        # 태그 기본값 설정
         tags_yaml = "[" + ", ".join(notion_tags) + "]" if notion_tags else "[notion, automation]"
 
         # ✅ Chirpy용 Front Matter
-        front_matter = f"""---\ntitle: "{title}"\ndate: {created_datetime_str} +0900\ncategories: [Notion, Sync]\ntags: {tags_yaml}\ndescription: "Notion 동기화된 게시글입니다."\ntoc: true\ncomments: true\n---\n"""
+        front_matter = f"""---
+        title: \"{title}\"
+        date: {created_datetime_str} +0900
+        categories: {categories_yaml}
+        tags: {tags_yaml}
+        description: \"Notion 동기화된 게시글입니다.\"
+        toc: true
+        comments: true
+        ---
+        """
 
         markdown_content = front_matter + "\n" + content + "\n"
 
+        # 이하 파일 업로드 로직은 기존 유지
         # ✅ 업로드 경로
         md_filename = f"_posts/{created_date_str}-{slug}.md"
 
