@@ -252,8 +252,9 @@ def sync_notion_to_github():
         # ✅ Category 추출
         category_key = "Category"
         notion_categories = []
-        if category_key in page["properties"] and page["properties"][category_key]["type"] == "multi_select":
-            notion_categories = [category["name"] for category in page["properties"][category_key]["multi_select"]]
+        if category_key in page["properties"] and page["properties"][category_key]["type"] == "select":
+            select_obj = page["properties"][category_key]["select"]
+            notion_categories = [select_obj["name"]] if select_obj else []
 
         categories_yaml = "[" + ", ".join(notion_categories) + "]" if notion_categories else "[Notion, Sync]"
 
