@@ -52,8 +52,8 @@ theme_mode:
 
 cdn:
 
-avatar: /assets/img/avatar.png
-social_preview_image: /assets/img/preview.png
+avatar: https://avatars.githubusercontent.com/u/38518675?v=4
+social_preview_image: https://avatars.githubusercontent.com/u/38518675?v=4
 
 toc: true
 
