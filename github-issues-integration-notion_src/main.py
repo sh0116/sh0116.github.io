@@ -117,7 +117,7 @@ def convert_rich_text_to_markdown(rich_text):
         # 색상이 지정된 경우
         color = annotations.get("color")
         if color and color not in ["default"]:
-            content = f'<span>$\\color{{{color}}} {content}$</span>'
+            content = f'<span style="color: {color};">{content}</span>'
 
         markdown_text += content
 
