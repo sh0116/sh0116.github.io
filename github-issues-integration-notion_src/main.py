@@ -281,15 +281,15 @@ def sync_notion_to_github():
 
         # ✅ Chirpy용 Front Matter
         front_matter = f"""---
-        title: \"{title}\"
-        date: {created_datetime_str} +0900
-        categories: {categories_yaml}
-        tags: {tags_yaml}
-        description: \"Notion 동기화된 게시글입니다.\"
-        toc: true
-        comments: true
-        ---
-        """
+title: \"{title}\"
+date: {created_datetime_str} +0900
+categories: {categories_yaml}
+tags: {tags_yaml}
+description: \"Notion 동기화된 게시글입니다.\"
+toc: true
+comments: true
+---
+"""
 
         markdown_content = front_matter + "\n" + content + "\n"
 
