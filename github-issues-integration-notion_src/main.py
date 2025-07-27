@@ -212,15 +212,50 @@ def fetch_page_blocks(page_id):
 
     return markdown_content
 
-def load_synced_data():
-    if not os.path.exists(SYNCED_FILE):
-        return {}
-    with open(SYNCED_FILE, "r") as f:
-        return json.load(f)
+def load_synced_data_from_repo():
+    """
+    GitHub의 notion_synced.json을 불러오며, 파일이 없으면 빈 파일을 생성 후 반환.
+    """
+    SYNCED_FILE = "github-issues-integration-notion_src/notion_synced.json"
 
-def save_synced_data(data):
-    with open(SYNCED_FILE, "w") as f:
-        json.dump(data, f)
+    try:
+        contents = repo.get_contents(SYNCED_FILE)
+        content_str = contents.decoded_content.decode()
+        return json.loads(content_str)
+    except Exception as e:
+        print(f"⚠️ Synced file not found. Creating new empty sync file... ({e})")
+        # 파일이 없다면 빈 JSON 생성
+        empty_json = "{}"
+        repo.create_file(
+            SYNCED_FILE,
+            "🆕 Create empty synced Notion data",
+            empty_json
+        )
+        print("🆕 Created empty synced data on GitHub")
+        return {}
+
+def save_synced_data_to_repo(data):
+    """
+    GitHub의 github-issues-integration-notion_src/notion_synced.json 파일을 업데이트하거나 생성
+    """
+    json_content = json.dumps(data, ensure_ascii=False, indent=2)
+
+    try:
+        contents = repo.get_contents(SYNCED_FILE)
+        repo.update_file(
+            contents.path,
+            "🔄 Update synced Notion data",
+            json_content,
+            contents.sha
+        )
+        print("🔁 Updated synced data on GitHub")
+    except Exception as e:
+        repo.create_file(
+            SYNCED_FILE,
+            "🆕 Create synced Notion data",
+            json_content
+        )
+        print("🆕 Created synced data on GitHub")
 
 def sync_notion_to_github():
     """
@@ -230,7 +265,7 @@ def sync_notion_to_github():
     print("🔄 Syncing Notion Pages to GitHub as Chirpy posts...")
 
     query = notion.databases.query(database_id=database_id)
-    synced_data = load_synced_data()
+    synced_data = load_synced_data_from_repo()
     updated_data = {}
 
     for page in query["results"]:
@@ -311,7 +346,7 @@ comments: true
 
     # ✅ 동기화 완료된 페이지 정보 저장
     synced_data.update(updated_data)
-    save_synced_data(synced_data)
+    save_synced_data_to_repo(synced_data)
 
     print("✅ Notion Pages successfully synced to GitHub as blog posts!")
 
