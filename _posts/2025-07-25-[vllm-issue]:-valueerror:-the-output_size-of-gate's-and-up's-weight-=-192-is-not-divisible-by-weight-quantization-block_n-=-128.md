@@ -3,7 +3,7 @@ title: "[vLLM Issue]: ValueError: The output_size of gate's and up's weight = 19
 date: 2025-07-25 08:00:00 +0900
 categories: [Trouble Shooting]
 tags: [LLM, vLLM, Issue]
-description: "Notion 동기화된 게시글입니다."
+description: ""
 toc: true
 comments: true
 ---
