@@ -284,6 +284,9 @@ def sync_notion_to_github():
         title = convert_rich_text_to_markdown(page["properties"][title_key]["title"]) if title_key else "Untitled"
         title = title.strip()
 
+        # ✅ description 추출
+        description = page["properties"]["Description"]["rich_text"][0]["text"]["content"]
+
         # ✅ Category 추출
         category_key = "Category"
         notion_categories = []
@@ -321,7 +324,7 @@ title: \"{title}\"
 date: {created_datetime_str} +0900
 categories: {categories_yaml}
 tags: {tags_yaml}
-description: "🍟"
+description: {description}
 toc: true
 comments: true
 ---
