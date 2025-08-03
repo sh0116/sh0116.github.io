@@ -348,8 +348,9 @@ comments: true
         updated_data[page_id] = last_edited_time_str
 
     # ✅ 동기화 완료된 페이지 정보 저장
-    synced_data.update(updated_data)
-    save_synced_data_to_repo(synced_data)
+    if updated_data:
+        synced_data.update(updated_data)
+        save_synced_data_to_repo(synced_data)
 
     print("✅ Notion Pages successfully synced to GitHub as blog posts!")
 
