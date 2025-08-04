@@ -92,9 +92,15 @@ def download_images(image_urls):
 
     return downloaded_files
 
+def get_plain_text(rich_text):
+    """
+    Notion rich_text 리스트에서 'text.content' 값들만 순수하게 이어붙여 반환.
+    """
+    return "".join([t.get("text", {}).get("content", "") for t in rich_text])
+
 def convert_rich_text_to_markdown(rich_text):
     """
-    Notion의 rich_text를 Markdown 형식으로 변환
+    Notion의 rich_text를 Markdown 형식으로 변환 (Jekyll 호환성 확보)
     """
     markdown_text = ""
 
@@ -107,23 +113,22 @@ def convert_rich_text_to_markdown(rich_text):
 
         annotations = text.get("annotations", {})
 
-        # 스타일 적용
+        # 스타일 적용 (HTML 태그 대신 Markdown 문법 사용)
+        if annotations.get("code"):
+            content = f"`{content}`"
         if annotations.get("bold"):
             content = f"**{content}**"
         if annotations.get("italic"):
             content = f"*{content}*"
-        if annotations.get("underline"):
-            content = f"<u>{content}</u>"
         if annotations.get("strikethrough"):
             content = f"~~{content}~~"
-        if annotations.get("code"):
-            content = f"`{content}`"
 
-        # 색상이 지정된 경우
-        color = annotations.get("color")
-        if color and color not in ["default"]:
-            content = f'<span style="color: {color};">{content}</span>'
+        # HTML 태그는 제거: underline, color 등은 무시하거나 markdown 강조로 대체
+        # underline은 GitHub/Chirpy에서 지원되지 않음 → bold 처리
+        if annotations.get("underline"):
+            content = f"**{content}**"
 
+        # 색상 무시 (Jekyll 마크다운은 <span style=...> 등 비호환)
         markdown_text += content
 
     return markdown_text
@@ -211,16 +216,28 @@ def fetch_page_blocks(page_id):
         elif block_type == "image":
             image_data = block["image"]
             image_type = image_data.get("type")
-        
+
             if image_type == "file":
                 image_url = image_data["file"]["url"]
             elif image_type == "external":
                 image_url = image_data["external"]["url"]
             else:
                 image_url = "UNKNOWN_IMAGE_URL"
-        
+
             markdown_content += f"![Image]({image_url})\n\n"
-      
+
+        # Bookmark 블록 처리
+        elif block_type == "bookmark":
+            bm = block["bookmark"]
+            url = bm["url"]
+            # caption이 있다면 텍스트로 변환
+            caption_rich = bm.get("caption", [])
+            if caption_rich:
+                text = convert_rich_text_to_markdown(caption_rich)
+            else:
+                text = url
+            markdown_content += f"[{text}]({url})\n\n"
+
         elif block_type == "table":
             markdown_content += fetch_table_blocks(block["id"])
 
@@ -294,9 +311,16 @@ def sync_notion_to_github():
             continue  # 이미 동기화된 페이지와 수정시간이 동일하면 skip
 
         # ✅ 제목 추출
-        title_key = next((key for key in page["properties"] if page["properties"][key]["type"] == "title"), None)
-        title = convert_rich_text_to_markdown(page["properties"][title_key]["title"]) if title_key else "Untitled"
-        title = title.strip()
+        #title_key = next((key for key in page["properties"] if page["properties"][key]["type"] == "title"), None)
+        #title = convert_rich_text_to_markdown(page["properties"][title_key]["title"]) if title_key else "Untitled"
+        #title = title.strip()
+
+        title_key = next((k for k,v in page["properties"].items() if v["type"] == "title"), None)
+        if title_key:
+            # 마크다운 없이 텍스트만
+            title = get_plain_text(page["properties"][title_key]["title"]).strip()
+        else:
+            title = "Untitled"
 
         # ✅ description 추출
         description = page["properties"]["Description"]["rich_text"][0]["text"]["content"]
