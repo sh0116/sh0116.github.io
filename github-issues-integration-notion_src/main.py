@@ -209,9 +209,18 @@ def fetch_page_blocks(page_id):
             markdown_content += f"```{language}\n{code_text}\n```\n\n"
 
         elif block_type == "image":
-            image_url = block["image"]["file"]["url"]
+            image_data = block["image"]
+            image_type = image_data.get("type")
+        
+            if image_type == "file":
+                image_url = image_data["file"]["url"]
+            elif image_type == "external":
+                image_url = image_data["external"]["url"]
+            else:
+                image_url = "UNKNOWN_IMAGE_URL"
+        
             markdown_content += f"![Image]({image_url})\n\n"
-
+      
         elif block_type == "table":
             markdown_content += fetch_table_blocks(block["id"])
 
