@@ -1,0 +1,23 @@
+---
+title: "Kubernetes - Service 란?"
+date: 2025-08-04 06:05:00 +0900
+categories: [kubernetes]
+tags: [Kubernetes]
+description: Kubernetes 기초
+toc: true
+comments: true
+---
+
+# Services
+
+-  외부 클라이언트가 몇 개이든지 프론트엔드 pod로 연결
+- 프론트엔드는 다시 백엔드 데이터베이스로 연결
+- pod의 IP가 변결 될 때마다 재설정 하지 않도록 해야함
+- → 결론 : 로드벨런싱 기
+![Image](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6db513d-ec54-40ff-aa74-2487b0bcfe15/9fcd1a32-c9d7-4113-a3f6-39e112bc3ed8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665WO4B5MN%2F20250805%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250805T061028Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEB4aCXVzLXdlc3QtMiJHMEUCIQCV8YQdPeH2n0IW1xhF7bmASi%2FM2OGjjuVQPSgWgKSVegIgWMYDzWDcTXOcefMyNeC4wR9Jrj%2FEI%2BWAhmSbxuHyEyUq%2FwMIVxAAGgw2Mzc0MjMxODM4MDUiDIWJpPoLIoy9WUk9bircAw%2FlkuG222RI%2FVXU2%2F67qsC6YV71wDAQUqIyMb0cApmwh2OoY4afEUfY3suJBAG649vMyRtnE%2B0scQwmbN6YrK%2BNOhU3N9am7MdzszXxHdRI2kQKakDVJb8Upi9evzx26IcTwzSiCanYSbjwpI0rJjOXFNxo9BK8H9aQCJgPrgnCN1ELVSso6aoCL44gFJM5kcVZf1PIJut%2FrApIe3OcTv%2FgwqXO2FZqWLDUaC%2F89THIDyr7Nm%2FKiWslkjjOeUZ%2BMphIo10qKGwR5RtfXVp9nLuEEwMcM97bCXarTrHzjP9%2F3i4nZWuJ%2FgrT9dQntS7ooSERJgsm%2FjX%2F1NtbtLz728Ve5Dt9kTjM9qRvoifcMTv%2FiXd7pyKKSFCLu%2FjHP7JIH6LCWp4uvlrkVWqjhI5bK4i6ieSNoFyR9Cl%2FH6EDiGFMYYSLr6lYJpIdKeINr4fWNnTz8oj0a2IRQtarkNpyDS8wltzRXzRlCQCAnvZuVCbSi4geTkTpD8cDJDjAbR6uNxzcFwgI%2FyJokW1MGn4cP3d90Og3PObmNJUrOsa51heyuCjI0CU%2BDu7yisv%2BPOqOmZVnD5FEknuJxYkTZFM28IokCN9afUQcv26B3VrwuF9JbHjoo1q6GakYaESWMJWzxsQGOqUBQ9NztjjiQU8SfKmaQylSthN7hJz%2Bcb2tANnFUcQOJSDad%2Fv9%2Btwe9q%2Ftg70Q0x9NweLFzJYsWwhY7oRAp0to1txfvOLE%2B6OSy%2B1j%2B8DRPogMb8NTCttYHBgUgG19qdJsmn%2B%2BGajeHV5sest%2FDUWGkXrJ56Ae7csv9guF7hoSCosHs87rzjF79zUEtbdWFKAYdyDIWkay3IJ%2F5ecLzznizb8TWZoD&X-Amz-Signature=76538dee3b4286c2b6349a192f0d46a94283ee167396728f19a415bc4b62ac06&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+## 서비스 세션 고정하기✨
+
+![Image](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6db513d-ec54-40ff-aa74-2487b0bcfe15/3df2994b-94f2-4401-bdfd-c3392b085c5d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665WO4B5MN%2F20250805%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250805T061028Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEB4aCXVzLXdlc3QtMiJHMEUCIQCV8YQdPeH2n0IW1xhF7bmASi%2FM2OGjjuVQPSgWgKSVegIgWMYDzWDcTXOcefMyNeC4wR9Jrj%2FEI%2BWAhmSbxuHyEyUq%2FwMIVxAAGgw2Mzc0MjMxODM4MDUiDIWJpPoLIoy9WUk9bircAw%2FlkuG222RI%2FVXU2%2F67qsC6YV71wDAQUqIyMb0cApmwh2OoY4afEUfY3suJBAG649vMyRtnE%2B0scQwmbN6YrK%2BNOhU3N9am7MdzszXxHdRI2kQKakDVJb8Upi9evzx26IcTwzSiCanYSbjwpI0rJjOXFNxo9BK8H9aQCJgPrgnCN1ELVSso6aoCL44gFJM5kcVZf1PIJut%2FrApIe3OcTv%2FgwqXO2FZqWLDUaC%2F89THIDyr7Nm%2FKiWslkjjOeUZ%2BMphIo10qKGwR5RtfXVp9nLuEEwMcM97bCXarTrHzjP9%2F3i4nZWuJ%2FgrT9dQntS7ooSERJgsm%2FjX%2F1NtbtLz728Ve5Dt9kTjM9qRvoifcMTv%2FiXd7pyKKSFCLu%2FjHP7JIH6LCWp4uvlrkVWqjhI5bK4i6ieSNoFyR9Cl%2FH6EDiGFMYYSLr6lYJpIdKeINr4fWNnTz8oj0a2IRQtarkNpyDS8wltzRXzRlCQCAnvZuVCbSi4geTkTpD8cDJDjAbR6uNxzcFwgI%2FyJokW1MGn4cP3d90Og3PObmNJUrOsa51heyuCjI0CU%2BDu7yisv%2BPOqOmZVnD5FEknuJxYkTZFM28IokCN9afUQcv26B3VrwuF9JbHjoo1q6GakYaESWMJWzxsQGOqUBQ9NztjjiQU8SfKmaQylSthN7hJz%2Bcb2tANnFUcQOJSDad%2Fv9%2Btwe9q%2Ftg70Q0x9NweLFzJYsWwhY7oRAp0to1txfvOLE%2B6OSy%2B1j%2B8DRPogMb8NTCttYHBgUgG19qdJsmn%2B%2BGajeHV5sest%2FDUWGkXrJ56Ae7csv9guF7hoSCosHs87rzjF79zUEtbdWFKAYdyDIWkay3IJ%2F5ecLzznizb8TWZoD&X-Amz-Signature=8c9b5485dd904022a31f46fe4286ed5453a3c285d33f15fdb2fe48799a81762d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+
