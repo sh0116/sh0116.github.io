@@ -1,0 +1,15 @@
+---
+title: "CKA 자격증 - Certified Kubernetes Administrator (CKA) with Practice Tests Udemy강의"
+date: 2025-08-04 06:05:00 +0900
+categories: [CKA]
+tags: [Kubernetes]
+description: CKA 자격증 소개
+toc: true
+comments: true
+---
+
+## CKA자격증 강의 - **Certified Kubernetes Administrator (CKA) with Practice Tests**
+
+![Image](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6db513d-ec54-40ff-aa74-2487b0bcfe15/d09667c5-05d9-4ebd-8fb7-a52ce658ded1/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QYDIALLC%2F20250805%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250805T002838Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBcaCXVzLXdlc3QtMiJHMEUCIQD%2B9cpX5ZlZDXn6biDFjHoxHz0roQ11g4h5eVfllWzZOQIgB7ax2mYhxPOSzBuTqsBdPt0vTxKWvthRkxIVC15WRWgq%2FwMIUBAAGgw2Mzc0MjMxODM4MDUiDChh97MdSsZ5iuXhOCrcA0fBSD2byFKMhKD5%2BXeDd0DC8YmFFTST16s3vQfJiQl1GJFLfhoHW4pGT05J5LTOi2cgSUHz5qWZVji9ysbIXWx9ZYsfZVAEHBV4rE8YRd%2B9B9j9iesJAP4bgE7jVw17ee%2F1ct8Lv5wPe%2B4uoDdG9JgpPQf%2F1YJY8ZCe8RK7%2FPeYyRCDFj3%2BU3VSDJeP86BxXEf2ZFU%2FPmsi2%2Fn5dMuTU0qCUFc6Kb1mEoNF3fE%2ByPGj%2Ff5mmtggG9HoIiyXIgztIsa5Tkp%2BL5GRAEGg59w4r1zl7OnTNYwHBCyCeQ9bLEpviwRaBgZDNDgNVjZNFY%2BnOZ62%2BjkRK4fZT6qqAu6X1lYpkKNuiHaIVx7SjzJb5cDXY2aT0NsD7jgdn3fnTy6wjvIsyGzWnXyyfPAXlM4%2F%2BWqMy03s0ANTWx2lZZpskSqUQcPP9d3dJN8VZYdw017EloHlpdMBqNJXcV6at%2BCZYxwgPc13pH2VFDbIkKfHZzz1U1TNjDJ30U5gAD1LM4xZfhpPn4VHgn%2ByQhroFQXGMdHdB1rvb%2FAqns3XbCqTmhj7tGR9e5qHr4TcKnA%2BCdfd6R07p6e0wn8ovgSNSnFR3eKOEn%2Fro%2FkcKwUBeRGp4LIQsl8V8Mo%2Fi3GqmCWYMNz0xMQGOqUBOTQhNo%2FMsEK4uup578Pd7%2B9PKCJKLXfg17bJCh1yGGXqSepuzxPjgwumP4s6O5ZjjkhNLCyBi5t2dQeuLx6UWCEE6%2Bcei2DXPgZ8zeZwV2m4rAmlfBIavGGq9P3SlT3jl28del%2F3SRXsQbWvrl790%2FaLuLPLTW9r7tINhdgqkJde46e935Fi7xOPsCTGhZqtgjzXtvXmisyIZvKggAsVRzYhjoZJ&X-Amz-Signature=62f99d039e10833701654ea7e67c12d82068c1d0b84c4f218a232ce8bcd618dd&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+
