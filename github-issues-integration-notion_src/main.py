@@ -210,6 +210,7 @@ def fetch_page_blocks(page_id):
 
         elif block_type == "code":
             language = block["code"]["language"]
+            if language=="plain text":language="text"
             code_text = convert_rich_text_to_markdown(block["code"]["rich_text"])
             markdown_content += f"```{language}\n{code_text}\n```\n\n"
 
