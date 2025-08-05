@@ -126,7 +126,7 @@ for-append보다 빠르게 List를 생성하는 방법
 > parameter 이름을 따로 지정하지 않고 입력.asterisk를 두개 사용하여 함수의 parameter를 표시.입력된 값은 함수 내에서 dict type으로 사용.오직 한 개만 기존 가변인자 다음에 사용.(순서 지키지 않으면 에러 발생함)
 
 
-```plain text
+```python
 # 키워드 가변인자만 사용
 >>> def kword_test(**kwargs):
 ...     print(kwargs)
