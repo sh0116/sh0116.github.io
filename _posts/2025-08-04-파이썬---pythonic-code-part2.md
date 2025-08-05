@@ -108,6 +108,7 @@ for-append보다 빠르게 List를 생성하는 방법
 
 
 ```plain text
+#sum_all 함수
 >>> def sum_all(a, b, *args):
 ...     print(list(args))
 ...     print(type(args))
