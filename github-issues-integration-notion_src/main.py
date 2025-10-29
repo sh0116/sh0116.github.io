@@ -26,7 +26,7 @@ def sync_github_to_notion():
     print("🔄 Syncing GitHub Issues to Notion...")
 
     issues = repo.get_issues(state='all')
-    query = notion.databases.query(database_id=database_id)
+    query = notion.data_sources.query(data_source_id=database_id)
     notion_issues = {page["properties"]["Title"]["title"][0]["text"]["content"]: page["id"] for page in query["results"] if "Title" in page["properties"]}
 
     for issue in issues:
@@ -296,7 +296,7 @@ def sync_notion_to_github():
     """
     print("🔄 Syncing Notion Pages to GitHub as Chirpy posts...")
 
-    query = notion.databases.query(database_id=database_id)
+    query = notion.data_sources.query(data_source_id=database_id)
     synced_data = load_synced_data_from_repo()
     updated_data = {}
 
