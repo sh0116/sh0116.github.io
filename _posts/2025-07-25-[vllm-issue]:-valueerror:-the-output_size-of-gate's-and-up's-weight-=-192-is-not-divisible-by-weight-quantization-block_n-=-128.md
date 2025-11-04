@@ -10,7 +10,7 @@ comments: true
 
 ### 🧩 무엇이 잘못됐는가?
 
-에러 메시지:
+에러 메시지: 
 
 ```plain text
 ValueError: The output_size of gate's and up's weight = 192 is not divisible by weight quantization block_n = 128
