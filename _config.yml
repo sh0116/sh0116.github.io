@@ -103,6 +103,10 @@ collections:
 
 defaults:
   - scope:
+      path: "sitemap.xml"
+    values:
+      layout: null
+  - scope:
       path: ""
       type: posts
     values:
