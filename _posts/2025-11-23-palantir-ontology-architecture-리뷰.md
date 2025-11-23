@@ -24,6 +24,14 @@ comments: true
 - Property (속성)
 - Shared property (공유 속성)
 - Link type (링크 타입)
+- Action Type (액션 타입)
+- Roles (역할)
+- Functions (함수)
+- Interfaces (인터페이스)
+- Object Views (객체뷰)
+### 온톨로지 관점
+
+- 팔란ㅌ
 ### 기능적 구성 요소 및 아키텍처 
 
 아래는 Palantir의 Ontology 백엔드 구조의 주요 컴포넌트입니다. Palantir
