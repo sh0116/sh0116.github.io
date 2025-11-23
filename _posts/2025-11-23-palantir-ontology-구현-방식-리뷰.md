@@ -10,7 +10,7 @@ comments: true
 
 ## Ontology Layer 
 
-![Image](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6db513d-ec54-40ff-aa74-2487b0bcfe15/24bfc627-5108-4107-8b73-ce84dd21c2a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466WCS7ZGLC%2F20251123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251123T225656Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH8aCXVzLXdlc3QtMiJIMEYCIQDj9CHIct2MjPQHDkw3afsbs6Xom89s%2B0UHGM5AO4qVaAIhAOgmx6M%2F1XhfOQKSgvlJQGafVjJ1%2BbQbtXP4XrLgY8W2Kv8DCEgQABoMNjM3NDIzMTgzODA1Igws8TpVHN4%2Fm8krbdoq3AMj7txPnNF3pd03eRmPX%2F9yPP8xwwAlXuVh3UpYC3GgtlEa9J%2FcgpJmuGkEFTcx2QJ8%2B60EGnAOhx65ZqVMfx5uybFJr7DLicNXjiBzCoupIgsaWYTQOsQAvYEQYc9zYdDIgaGvwsbewJsjNxCjtYmJ2RtACwOX0S2w%2FNjXzdh%2B9BQA2cpvCH5T77ohHdGy1ipZEw8nmcCbH%2FfMffAh4H%2FqORxhG%2FmS35I8QOmTicYko9zjZw7tgqTo4U9CZE3QP1jo46kpkXNhO14y9aHln2BiXmgMVrnKRZJ1o5OuHaM5VLkkUvMnbhEHRCqrdsv4OPc0r4diLZd0X0tpuyZlDuv40fNG2mcDF5rPwS3GeqLfYyY%2FeWOLMFurmnvscMeHrYAUAwvHCPWOpNCEYZ7Xl60O6YDw3kcbazTPbPhF6%2FvriXwWu3SnL8nn8r1dsLf%2FXmJ6QfqbYl49gnuleFRbrsIXXa3FcGYdHOCxZ0CO3jqACPgAGu81lpIgXJCF%2Bj6P%2F88wrT3Dn2I3bgs2MLgKh0iP5qaTpG2TTNqtpPmIrGsno8FCTYWJ53H%2BdxLJlAJ1Pe2Bg5nGwO6%2BcF3l0NSuTI0EA4w79rOuehJg3gfe3L75svbHXqr4fgcyp2%2FV3TDTmo7JBjqkAXiWpgNPYU8znj4xXfl8%2F%2BQWakxAFqwgzczy6YBrFelBj0GobhkIaryuZ7YQ1QW%2Fy2JodUJNiWqYxbO1IzqGrlnZJ9qO3dsxySHFh6QtECMq5Asf9BNbSpjqq2iY31RcPXGS3vvat69lLIrZ%2BlxEKL3W%2B4XBp5ef4KkRxxS5XwNP8SAZd5Pg6M81F%2FlReMsBhHNdh%2BcZ%2BswOhU5RPYLysdW%2BcY9i&X-Amz-Signature=66cdf20c6c80bb12d1457bdcee756600b3e5fe2de2f8ef704fa7cdee8583ab8c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![Image](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6db513d-ec54-40ff-aa74-2487b0bcfe15/24bfc627-5108-4107-8b73-ce84dd21c2a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QJX6UKTX%2F20251123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251123T230856Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH8aCXVzLXdlc3QtMiJHMEUCIAc9VY3v0Es%2FV9ye2hXeMlV5bihxdf0zytcDNASQMTNXAiEArbadHTMO%2BqfyxV%2BjxH5R39%2Bz5l1YWrQ5gR6YPiq%2Ft2Iq%2FwMISBAAGgw2Mzc0MjMxODM4MDUiDCfMC0z4MyMTXgSSrCrcAyKJD%2BCWrzAiPZgVvy3pKzCPWaJ2zSPkDac8xYwqyjF8s6xjwipM2TYcu2cs0aY1D%2BRLBz%2FOifraySf8Trn0jEUXp9iQfH8dINfIIKgegT57PcAWRf5BqDxTOazkZEtmisauG%2Fdht1AiIRAqX94WRL81LbonrtPJV627Yz7lXxLr3WP3VQ8wv8pi8iCxOv8rKudAi3wFp6iZVkNqmseCIu27r7yKUmcTwBA6sdPz236HiHoHZmJZBrhHCOBB9DAZ9CqIN7qymZdJAwPJ%2BVAlKHeOuhgx8QhdG2wgduPGMNcUjuMj7TJirXoJVbyT0jDIssUWjGBGjFezu4jhYUCvvjQ8xcpfQYynd1Rdhvj0lrQZq6P%2F40xxKhPowHC4RMUeeH%2FKWvT7cuHftVrB%2BcgYN9dT7wKdwYBySc7DKHaIHbtVNlwjxjcvAc907dVRoMa5JQuIrNGIWfUFRJ%2FOmutoewimsmGGDoMTSP2D5bOkis0R1qpyapiyr1jSmt9oGbCizI5f%2BiYi%2FnBO915%2BajFUCG87ypsKVpiu2wlcNB9qICxFTvlHIIJgrGnod0gupdTB3EUfDx6mMS0pEbQmDXZevhNqjPI0nvk8DpLOjayGZs4godERRfYYaexdjlw2MICajskGOqUBiLV8PsaDPNupBNnMUnc1l3TF0wjqa4UIUNwLBg3qQNUzvywAlxzvk%2BiexQFjHrmVZyqqnXO9O7tg%2BTuBhWEcKpsC1yM%2FcR4U7%2FsKlME%2BE%2FQCbpl9hz%2B3xA0194uMZ%2Bmzm4XGulwUw2oxBiI2GlYYdSeFXJUV8v4gxxLt0VVUGXYMJhA7xRzKFKaFWfCT7PkIfofGWnOwxLs1hRZwX9TZJRxbv2gn&X-Amz-Signature=684ea343a73480c3cefa2d1d9f8dcda9bc2b106a695f35525bbfb1cb36aecc0a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
 **데이터 수집/전처리/적재(일반, 대규모, 실시간)**
 
@@ -36,4 +36,16 @@ comments: true
 
 - 객체 저장소 : 객체 데이터 자체는 카산드라(Cassandra)와 같은 수평적으로 확장 가능한, Key-Value 저장소에 저장될 수 있다. 각 객체는 고유 ID를 KEY형식으로 / 각 객체의 실 데이터를 Json 포맷으로 Value값으로 저장한다.
 - 검색 및 그래프 인덱싱 : 빠른 검색, 집계, 그래프 탐색 기능을 위해서 엘라스틱서치(Elasticsearch)나 루씬(Lucene) 기반의 인덱스 검색이 필수적이다. Key-Value 저장소에 저장된 객체 데이터는 검색 엔진에 인덱싱되어 쿼리를 통해 제공된다
+**팔란티어의 온톨로지 데이터 활용 방식**
+
+개발자는 파이썬 OSDK (Ontology SDK)를 사용하여 온톨로지와 상호작용한다.
+
+> # 연착 상태인 비행기들을 전부 불러오는 코드를 보다 직관적으로 작성할 수 있다.**
+client.ontology.object.비행기.where(status=”연착”).all()  **
+
+온톨로지에는 액션(Action)이라는 동적 요소도 정의할 수 있어, 액션(Action)을 호출하면 Data의 업데이트, 플랫폼의 거버넌스, 보안, 감사추적 등 모든 트랙잭션들을 수행할 수 있다.
+
+참고자료
+
+- https://daddynkidsmakers.blogspot.com/2025/10/blog-post_11.html
 
