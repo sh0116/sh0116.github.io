@@ -8,6 +8,21 @@ toc: true
 comments: true
 ---
 
-![Image](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6db513d-ec54-40ff-aa74-2487b0bcfe15/24bfc627-5108-4107-8b73-ce84dd21c2a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466ZEIRLTW4%2F20251123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251123T223743Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH4aCXVzLXdlc3QtMiJHMEUCIHJ4uvPHeqo6aVpFTyg9Q8AUe5bsx1CSXjzMproxHnA1AiEAiJ4doQfUYMu%2B%2BHEaqKAOFz3kgET11Yqto09ubiqXzmkq%2FwMIRxAAGgw2Mzc0MjMxODM4MDUiDC4RE%2BUlMN51ZP5oMyrcA%2FYlA44sjSfrwZRSOMKi6bMHqmgY11haXl%2Bi54NnKrkhT%2B8vGEVCYRKeiV8IDU%2BLsv4BX9ECrylZR4HgNFJv7CT8h%2FDabfnVa21n4Ols5%2FLr5G3hBsuJgYpBG6ljSX6MzzHgKeAuixB31yocUapUUDumVPntDZL53khfgoCx6kGF2ig%2BjQZp3VzfTIkpmLIlNM04Xqz1inys46r%2Fyom6KK29yscpNieALuBUp0U5tMfUGGyFu9tFxr86icR0jixtE9kgUwGDRTk2%2BjRh1JEY3xzPY%2BK7hE19q%2FNfuvZKUYUDBkW0UePJf8KYRaWXOmpvgGNKFil6a8C5Uf88QaMMuWnKjdzjd8bk3pRIB08plAPyG%2BZWGlQveLaCmtOyE2XUmOfVv9XHBQchQBxXV2J5UXbdYfLdD5pp4tiNbQpaFy6Bk0wHAabcAweuflQ21tl3bKOU8JTNpHQWFJKbny3HR7o5iEWne%2FgA3cJpW%2BOURVQQYP4t39ZbxQPOaUpmHvxHvOzijigZ5ODNag4eXJlwD8021XQoYgvqEaEoQNxDfY23aFgYfelp4LWgjz9MO0d2orIuNrD67W9PI4a2MysEJ%2FgZlF3j4W47Hg70Q8nhxN6315GAprhN7NpOmyuCMND%2BjckGOqUBW6IZfXOETCZKupRd2MwFyKPxQatPiTdUzfaxbyWe4JicIw46u%2B8oQpQDdUdn1qJaRjHkEgJnhM0cS1HyShtk2aUB5CNVtY2sFajcN51WoRwkdY9u2%2Fe1Xr%2FwCWo9%2B%2FADWouq1E5jRYblPcqC5j9LvoC50EIey3KvYxb0Ghng5SZD7VyUinZ3HqjbKT6WIZGbEO0YrneFGk9OZYdR1vr60tlQ%2F%2F1R&X-Amz-Signature=408cd62dcb951172553f702a6c186d547ad18df28ccc6fa80ac214a86386a840&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+## Ontology Layer 
+
+![Image](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6db513d-ec54-40ff-aa74-2487b0bcfe15/24bfc627-5108-4107-8b73-ce84dd21c2a0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4666AQV772G%2F20251123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251123T224726Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH8aCXVzLXdlc3QtMiJHMEUCIQCS0craKwfaooMiFB%2F%2BfVd6CWsVBJiCZk0Rbm0wXDrPzgIgU1cUgbjL%2FtwXF7UeKzGRNnBjD57nZa%2BAuqdWh%2BcDnVMq%2FwMISBAAGgw2Mzc0MjMxODM4MDUiDNczPQspxaYXuYH60yrcAweb0wBA8ekaN6ObmUDA6iyQRwjou1am%2BqEXMvezzQD0Lk32lIKdxEflxPiiyodKKkUECbqN2f2E6USFe2Cl8xjFyGw0QZMxhdZWdgU1DvaAKHXbEIolhMELr0nhjfevXrFXszsBAuEMuuxQY%2FzJqyzJUFwtp9xiuNfIE4qMUiEZHNc1F9MSrXrRDZDLn%2B1oG0rd6eBAkdZalU%2F83Qi9ftnf9AUy76KDcMILvIk0p1VfLZkRrHsz%2FxbJ57J2y5fYuata7adQmrZRBSv7EQUKbSz%2BrhsMs6cZKvhjIvipFl61iJmobuEJ0O%2Flp116W%2B8%2Fajf3J7nUB7ZjKORcUwJxsVPWHE5liwmGXfziQTYDWjXdPuoBlTCOQ64bDgrjpFZXeNup2RUA3V7HuodsKOszJhpogch%2FkhuDrBI5bjNbFkIjeFrnBl8vyJwFqwqJ44s%2BbRotXXr6vZXS8lGENk74oDc%2FNU27BxISaYN3aHkeuqJ039qCJYfpWifLYflCEFRO1K3EEiaajoYwpGVE6YNrXCj6aWifBx2yUdZZC%2FKnZl%2Bpi1IMZFQlD1GmH8nimj9Zf53OaJkOQzuW%2FesJEnn91qbTRyfhsC7sCdaoIc1Crx3sg9xRjvWI9MUYtOyXMNyZjskGOqUBH%2BqIEbEBilCLRriqx09Pv9YlvpKApwick4DIvKczQDRmfbYNZtcpvUFokFjREqNRycz8aUCH7hVAhYyFaBFz3QmyNOzs2JSckKNkXACHc50a0dxZQWKJsUEH24MyjIsi%2BRuL506NwrbifGEhO%2Frz7Yp4n2jZ2ofIP5rTBHr7vLUyXPztyfeqUhVSzfD8ggAKmjbJdUwXAS7%2FE0j%2BIxYxY0b%2BhiBH&X-Amz-Signature=d8ac8e803574e193643a9daae04859f81ddd3591228d1bfb54824502bae09008&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+**데이터 수집/전처리/적재(일반, 대규모, 실시간)**
+
+1. 데이터 처리 Workflow 
+1. 기반 처리 기술
+**온톨로지 메타모델**
+
+온톨로지의 개념은 객체지향프로그래밍(OOP)과 매우 유사하다.
+
+| 팔란티어 개념 | 테이블 모델 ㄱ |   |
+| --- | --- | --- |
+|   |   |   |
+|   |   |   |
 
 
