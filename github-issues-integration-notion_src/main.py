@@ -321,7 +321,7 @@ title: \"{title}\"
 date: {created_datetime_str} +0900
 categories: {categories_yaml}
 tags: {tags_yaml}
-description: \"Notion 동기화된 게시글입니다.\"
+description: ""
 toc: true
 comments: true
 ---
