@@ -321,7 +321,7 @@ title: \"{title}\"
 date: {created_datetime_str} +0900
 categories: {categories_yaml}
 tags: {tags_yaml}
-description: ""
+description: "🍟"
 toc: true
 comments: true
 ---
