@@ -3,7 +3,7 @@ title: "[vLLM Issue]: ValueError: The output_size of gate's and up's weight = 19
 date: 2025-07-25 08:00:00 +0900
 categories: [Trouble Shooting]
 tags: [LLM, vLLM, Issue]
-description: ""
+description: "FAST01"
 toc: true
 comments: true
 ---
