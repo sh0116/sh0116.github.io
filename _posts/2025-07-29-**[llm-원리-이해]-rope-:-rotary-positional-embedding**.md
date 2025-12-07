@@ -1,5 +1,5 @@
 ---
-title: "**[LLM 원리 이해] RoPE : Rotary Positional Embedding**"
+title: "[LLM 원리 이해] RoPE : Rotary Positional Embedding"
 date: 2025-07-29 05:48:00 +0900
 categories: [LLM]
 tags: [Llama, LLM]
