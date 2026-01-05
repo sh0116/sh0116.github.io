@@ -8,7 +8,7 @@ toc: true
 comments: true
 ---
 
-# 🧠 RoPE (Rotary Positional Encoding)란?
+# 🧠 RoPE (Rotary Positional Encoding)란? 
 
 Transformer는 순서를 고려하지 않는 Attention 구조이기 때문에, **토큰의 위치 정보**를 표현하기 위해 positional embedding이 필수입니다.
 
