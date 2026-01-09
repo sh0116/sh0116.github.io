@@ -243,7 +243,9 @@ def sync_notion_to_github():
 
         if synced_data.get(page_id) == last_edited_time_str:
             continue  # 이미 동기화된 페이지와 수정시간이 동일하면 skip
-
+        description = page["properties"]["Description"]["rich_text"][0]["text"]["content"]
+        print(description)
+        exit()
         # ✅ 제목 추출
         title_key = next((key for key in page["properties"] if page["properties"][key]["type"] == "title"), None)
         title = convert_rich_text_to_markdown(page["properties"][title_key]["title"]) if title_key else "Untitled"
