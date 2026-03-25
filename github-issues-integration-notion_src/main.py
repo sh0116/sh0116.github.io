@@ -99,7 +99,12 @@ def convert_rich_text_to_markdown(rich_text):
     markdown_text = ""
 
     for text in rich_text:
-        content = text["text"]["content"]
+        if "text" in text:
+            content = text["text"]["content"]
+        else:
+            # 해당 객체를 JSON 문자열로 변환
+            content = f"[RAW: {json.dumps(text, ensure_ascii=False)}]"
+
         annotations = text.get("annotations", {})
 
         # 스타일 적용
