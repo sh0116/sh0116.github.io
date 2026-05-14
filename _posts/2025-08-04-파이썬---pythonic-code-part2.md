@@ -107,7 +107,7 @@ for-append보다 빠르게 List를 생성하는 방법
 > 개수가 정해지지 않은 변수를 함수의 parameter로 사용.asterisk를 사용하여 함수의 parameter를 표시.입력된 값은 함수 내에서tuple type으로 사용.오직 한 개만 함수의 맨 마지막 parameter 위치에 사용.
 
 
-```plain text
+```text
 #sum_all 함수
 >>> def sum_all(a, b, *args):
 ...     print(list(args))
