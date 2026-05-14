@@ -143,6 +143,9 @@ exclude:
   - purgecss.js
   - "*.config.js"
   - "package*.json"
+  - google5ad3eef21000f771.html
+  - navera85c4025294a169f1aee51bf58b03a8f.html
+  - test__sitemap.xml
 
 jekyll-archives:
   enabled: [categories, tags]
@@ -155,3 +158,4 @@ jekyll-archives:
 
 plugins:
   - jekyll-sitemap
+  - jekyll-redirect-from

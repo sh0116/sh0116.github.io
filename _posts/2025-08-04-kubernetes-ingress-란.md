@@ -6,6 +6,8 @@ tags: [Kubernetes]
 description: Kubernetes 기초
 toc: true
 comments: true
+redirect_from:
+  - /posts/kubernetes---ingress-란?/
 ---
 
 # Ingress 

@@ -6,6 +6,8 @@ tags: [Kubernetes]
 description: Kubernetes 기초
 toc: true
 comments: true
+redirect_from:
+  - /posts/kubernetes---pod란?/
 ---
 
 ## 포드, 팟, 파드 == pod의 특징

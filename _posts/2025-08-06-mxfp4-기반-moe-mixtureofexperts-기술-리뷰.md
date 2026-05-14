@@ -6,6 +6,8 @@ tags: [LLM, OPENAI, GPT-OSS, GPT]
 description: OpenAI 및 MX FP4 표준 기반 MoE 모델의 아키텍처
 toc: true
 comments: true
+redirect_from:
+  - /posts/mxfp4-기반-moe-(mixture‑of‑experts)-기술-리뷰/
 ---
 
 ### 🧠 1. 개요

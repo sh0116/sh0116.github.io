@@ -6,6 +6,8 @@ tags: [notion, automation]
 description: 당근마켓 세미나 리뷰
 toc: true
 comments: true
+redirect_from:
+  - /posts/aws-vpc-privatelink를-이용한-네트워크-구성-전략-(network-architecture-using-aws-privatelink)---당근-sre-밋업 1회/
 ---
 
 발표자 : 박병진님

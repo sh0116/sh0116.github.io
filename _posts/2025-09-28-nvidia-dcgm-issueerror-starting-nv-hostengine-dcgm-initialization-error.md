@@ -7,6 +7,8 @@ description:
 
 toc: true
 comments: true
+redirect_from:
+  - /posts/[nvidia-dcgm-issue]error-starting-nv-hostengine:-dcgm-initialization-error/
 ---
 
 ```scss

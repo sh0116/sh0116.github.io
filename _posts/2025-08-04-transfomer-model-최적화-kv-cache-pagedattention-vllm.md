@@ -6,6 +6,8 @@ tags: [Transfomer, LLM, AI]
 description: Transfomer model 기술 소개
 toc: true
 comments: true
+redirect_from:
+  - /posts/transfomer-model-최적화---kv-cache,-pagedattention,-vllm/
 ---
 
 # Transfomer model 최적화 - KV Cache, PagedAttention, vLLM

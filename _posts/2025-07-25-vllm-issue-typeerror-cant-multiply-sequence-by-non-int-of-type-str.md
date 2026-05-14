@@ -6,6 +6,8 @@ tags: [vLLM, LLM, Issue]
 description: vLLM Issue 및 해결방법
 toc: true
 comments: true
+redirect_from:
+  - /posts/[vllm-issue]-typeerror:-can't-multiply-sequence-by-non-int-of-type-'str'/
 ---
 
 ## 💥 vLLM 0.9.1에서 `rope_scaling.factor` 관련 TypeError 문제 해결기

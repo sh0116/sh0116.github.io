@@ -6,6 +6,8 @@ tags: [AI, Transfomer, LLM]
 description: Attention is All You Need 리뷰
 toc: true
 comments: true
+redirect_from:
+  - /posts/transformer-(attention-is-all-you-need)-분석/
 ---
 
 # **Transformer (Attention is All You Need)**

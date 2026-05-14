@@ -6,6 +6,8 @@ tags: [Kubernetes]
 description: CKA 자격증 소개
 toc: true
 comments: true
+redirect_from:
+  - /posts/cka-자격증---certified-kubernetes-administrator-(cka)-with-practice-tests-udemy강의/
 ---
 
 ## CKA자격증 강의 - **Certified Kubernetes Administrator (CKA) with Practice Tests**

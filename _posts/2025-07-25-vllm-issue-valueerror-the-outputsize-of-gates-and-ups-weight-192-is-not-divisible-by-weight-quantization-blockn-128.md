@@ -6,6 +6,8 @@ tags: [LLM, vLLM, Issue]
 description: vLLM Issue 및 해결방법
 toc: true
 comments: true
+redirect_from:
+  - /posts/[vllm-issue]:-valueerror:-the-output_size-of-gate's-and-up's-weight-=-192-is-not-divisible-by-weight-quantization-block_n-=-128/
 ---
 
 ### 🧩 무엇이 잘못됐는가?
