@@ -8,6 +8,8 @@ toc: true
 comments: true
 ---
 
+![Image](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6db513d-ec54-40ff-aa74-2487b0bcfe15/0f6df687-f47d-437a-95e1-2656fc4bc43d/ChatGPT_Image_2025%EB%85%84_8%EC%9B%94_11%EC%9D%BC_%EC%98%A4%ED%9B%84_08_53_20.png)
+
 ## 내용 요약 TL;DR
 
 > 최근 연구는 “추론-시점 연산(Test-Time Compute, TTC)”을 늘리면 항상 좋아진다는 가정을 반박한다. 특정 과제에선 추론 길이를 늘릴수록 정확도가 하락(inverse scaling)했다. arXivaryopg.github.io
