@@ -1,7 +1,7 @@
 ---
 title: "Test-Time Compute 역스케일링(Inverse Scaling) 요약과 실무 대응 가이드"
 date: 2025-08-11 11:47:00 +0900
-categories: [기술소개]
+categories: [vLLM]
 tags: [LLM]
 description: 추론 길이를 늘릴수록 성능이 떨어지는 역설과 이를 완화하는 운영 전략
 toc: true
