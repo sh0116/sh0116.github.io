@@ -14,8 +14,16 @@ comments: true
 
 기업 내/외 방대한 양의 데이터를 기반으로 의미를 부여하고, 관계성을 부여하여 모든 유형의 의미적요소(객체, 속성, 링크)와 동적 요소(작업, 함수)을 모두 포함합니다.
 
+### Ontology 온톨로지 핵심 개념
+
 조직(기업)의 현실세계(Real-World)를 디지털로 가상화하여, 조직의 문제점을 디지털에서 최적화된 알고리즘을 통해 해결해 나아갈 수 있는 기반을 마련하는 것이 Ontology Architeture의 개념이다.
 
+**주요 구성 요소**
+
+- Object Type(객체 타입) 
+- Property (속성)
+- Shared property (공유 속성)
+- Link type (링크 타입)
 ### 기능적 구성 요소 및 아키텍처 
 
 아래는 Palantir의 Ontology 백엔드 구조의 주요 컴포넌트입니다. Palantir
