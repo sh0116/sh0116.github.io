@@ -36,4 +36,16 @@ comments: true
 
 - 객체 저장소 : 객체 데이터 자체는 카산드라(Cassandra)와 같은 수평적으로 확장 가능한, Key-Value 저장소에 저장될 수 있다. 각 객체는 고유 ID를 KEY형식으로 / 각 객체의 실 데이터를 Json 포맷으로 Value값으로 저장한다.
 - 검색 및 그래프 인덱싱 : 빠른 검색, 집계, 그래프 탐색 기능을 위해서 엘라스틱서치(Elasticsearch)나 루씬(Lucene) 기반의 인덱스 검색이 필수적이다. Key-Value 저장소에 저장된 객체 데이터는 검색 엔진에 인덱싱되어 쿼리를 통해 제공된다
+**팔란티어의 온톨로지 데이터 활용 방식**
+
+개발자는 파이썬 OSDK (Ontology SDK)를 사용하여 온톨로지와 상호작용한다.
+
+> # 연착 상태인 비행기들을 전부 불러오는 코드를 보다 직관적으로 작성할 수 있다.**
+client.ontology.object.비행기.where(status=”연착”).all()  **
+
+온톨로지에는 액션(Action)이라는 동적 요소도 정의할 수 있어, 액션(Action)을 호출하면 Data의 업데이트, 플랫폼의 거버넌스, 보안, 감사추적 등 모든 트랙잭션들을 수행할 수 있다.
+
+참고자료
+
+- https://daddynkidsmakers.blogspot.com/2025/10/blog-post_11.html
 
