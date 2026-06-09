@@ -6,6 +6,8 @@ tags: [Kubernetes]
 description: Kubernetes 기초
 toc: true
 comments: true
+redirect_from:
+  - /posts/kubernetes---endpoint-란?/
 ---
 
 # EndPoint 역할

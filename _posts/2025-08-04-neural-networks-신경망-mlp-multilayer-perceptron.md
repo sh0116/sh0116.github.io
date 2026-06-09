@@ -6,6 +6,8 @@ tags: [AI]
 description: MLP (Multilayer Perceptron)  소개
 toc: true
 comments: true
+redirect_from:
+  - /posts/neural-networks-신경망-:-mlp-(multilayer-perceptron)/
 ---
 
 # Perceptron 퍼셉트론

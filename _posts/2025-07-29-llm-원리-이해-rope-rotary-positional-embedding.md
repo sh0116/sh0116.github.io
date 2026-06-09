@@ -6,6 +6,8 @@ tags: [Llama, LLM]
 description: LLM 아키텍처 설명
 toc: true
 comments: true
+redirect_from:
+  - /posts/[llm-원리-이해]-rope-:-rotary-positional-embedding/
 ---
 
 # 🧠 RoPE (Rotary Positional Encoding)란?

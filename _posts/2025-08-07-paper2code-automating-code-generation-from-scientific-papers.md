@@ -6,6 +6,8 @@ tags: [LLM, agent, paper2code]
 description: 논문을 자동으로 코드 저장소로 변환하는 다중 에이전트 기반의 LLM 시스템
 toc: true
 comments: true
+redirect_from:
+  - /posts/📄-paper2code:-automating-code-generation-from-scientific-papers/
 ---
 
 # 📄 Paper2Code: Automating Code Generation from Scientific Papers

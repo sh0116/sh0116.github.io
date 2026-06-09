@@ -1,5 +1,6 @@
 import argparse
 import os
+import re
 import requests
 import datetime
 import json
@@ -18,6 +19,15 @@ notion = Client(auth=notion_token)
 database_id = os.environ['NOTION_DATABASE_ID']
 
 SYNCED_FILE = "github-issues-integration-notion_src/notion_synced.json"
+
+
+def sanitize_slug(title):
+    slug = title.lower()
+    slug = re.sub(r'[^a-z0-9가-힣\s-]', '', slug)
+    slug = re.sub(r'\s+', '-', slug)
+    slug = re.sub(r'-+', '-', slug)
+    return slug.strip('-')
+
 
 def sync_github_to_notion():
     """
@@ -345,7 +355,7 @@ def sync_notion_to_github():
         created_date_str = created_date.strftime("%Y-%m-%d")
         created_datetime_str = created_date.strftime("%Y-%m-%d %H:%M:%S")
 
-        slug = title.lower().replace(" ", "-").replace("/", "-")
+        slug = sanitize_slug(title)
 
         # ✅ 태그 추출
         tags_key = next((key for key in page["properties"] if page["properties"][key]["type"] == "multi_select" and key != category_key), None)

@@ -6,6 +6,8 @@ tags: [Kubernetes]
 description: Kubernetes 기초
 toc: true
 comments: true
+redirect_from:
+  - /posts/kubernetes---local(vm)에서-worker-node-추가/
 ---
 
 ### Master Node와 기존에 이미 Worker Node가 있는 경우입니다

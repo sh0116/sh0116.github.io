@@ -6,6 +6,8 @@ tags: [LLM, OPENAI, GPT-OSS, GPT]
 description: OpenAI GPT-OSS 리뷰
 toc: true
 comments: true
+redirect_from:
+  - /posts/[llm]-openai-gpt-oss-리뷰/
 ---
 
 ### 🔍 개요

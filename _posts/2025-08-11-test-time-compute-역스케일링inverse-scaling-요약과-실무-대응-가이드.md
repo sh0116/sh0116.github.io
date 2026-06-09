@@ -6,6 +6,8 @@ tags: [LLM]
 description: 추론 길이를 늘릴수록 성능이 떨어지는 역설과 이를 완화하는 운영 전략
 toc: true
 comments: true
+redirect_from:
+  - /posts/test-time-compute-역스케일링(inverse-scaling)-요약과-실무-대응-가이드/
 ---
 
 ![Image](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6db513d-ec54-40ff-aa74-2487b0bcfe15/0f6df687-f47d-437a-95e1-2656fc4bc43d/ChatGPT_Image_2025%EB%85%84_8%EC%9B%94_11%EC%9D%BC_%EC%98%A4%ED%9B%84_08_53_20.png)

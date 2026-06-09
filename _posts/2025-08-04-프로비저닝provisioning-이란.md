@@ -6,6 +6,8 @@ tags: [Docker, Kubernetes, vLLM]
 description: 프로비저닝 개념
 toc: true
 comments: true
+redirect_from:
+  - /posts/프로비저닝(provisioning)-이란?/
 ---
 
 # provisioning

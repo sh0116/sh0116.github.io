@@ -6,6 +6,8 @@ tags: [Kubernetes]
 description: Kubernetes 기초
 toc: true
 comments: true
+redirect_from:
+  - /posts/kubernete---update,-rollback/
 ---
 
 ## Application Rolling Update & RollBack
