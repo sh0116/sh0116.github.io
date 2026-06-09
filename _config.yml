@@ -9,7 +9,7 @@ title: FAST01
 tagline: Tech.Blog
 description:
 
-url: "https://9r3at.github.io"
+url: "https://sh0116.github.io"
 
 github:
   username: sh0116
@@ -60,7 +60,7 @@ toc: true
 comments:
   provider: giscus
   giscus:
-    repo: 9r3at/9r3at.github.io
+    repo: sh0116/sh0116.github.io
     repo_id: R_kgDOPQBa3A
     category: Q&A
     category_id: DIC_kwDOPQBa3M4CtQ_M
